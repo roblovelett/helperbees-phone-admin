@@ -9,8 +9,8 @@ module.exports = () => {
         return httpreq.responseText;          
     };
 
-    db = JSON.parse(get_url('http://jsonplaceholder.typicode.com/db')); 
-
+    const db = JSON.parse(get_url('http://jsonplaceholder.typicode.com/db')); 
+    
     return db;
     
 }

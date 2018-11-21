@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import db from './db';
 
 class App extends Component {
   
@@ -24,7 +25,6 @@ class App extends Component {
   }
 
   render() {
-
     let { isLoaded, items } = this.state; // set props of state
 
     if (!isLoaded) {
