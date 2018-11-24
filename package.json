@@ -17,7 +17,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "run-p express-server react-server",
+    "express-server": "node index",
+    "react-server": "npm start --prefix client",
+    "heroku-postbuild": "cd client && npm i --only=dev && npm i && npm run build"
   },
   "repository": {
     "type": "git",

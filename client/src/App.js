@@ -1,47 +1,23 @@
 import React, { Component } from 'react';
-import db from './db';
+import { Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import List from './components/List';
 
 class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false,
-    }
-  }
-
-  componentDidMount() {
-
-    fetch('https://jsonplaceholder.typicode.com/users') // fetch api
-      .then(res => res.json()) // make json
-      .then(json => { // loaded is true
-        this.setState({
-          items: json,
-          isLoaded: true
-        })
-      });
-
-  }
-
   render() {
-    let { isLoaded, items } = this.state; // set props of state
-
-    if (!isLoaded) {
-      return (<div>Loading...</div>);
-    } else {
-      return (
-        <div className="App">
-          <ul>
-            {items.map(item => (
-                <li key={item.id}>
-                  Name: {item.name} | Email: {item.email}
-                </li>
-            ))}
-          </ul>
-        </div>
-      );  
-    };
+    const App = () => (
+      <div>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/list' component={List}/>
+        </Switch>
+      </div>
+    )
+    return (
+      <Switch>
+        <App/>
+      </Switch>
+    );
   }
 }
 
