@@ -1,5 +1,6 @@
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const webpack = require('webpack');
 
 const config = {
   entry: './index.js',
@@ -23,9 +24,6 @@ const config = {
       '.jsx'
     ]
   },
-  plugins: [
-    new LodashModuleReplacementPlugin
-  ],
   devServer: {
     contentBase: './client/build'
   }

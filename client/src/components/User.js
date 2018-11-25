@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import express from 'express';
 
 class User extends Component {
 
@@ -13,22 +12,8 @@ class User extends Component {
 
     componentDidMount() {
 
-        const queryParser = express();
-
-        const phone = queryParser.get('/user?phone=:phone', (req, res) => { //GET /user?phone=111-111-1111 x111
-            /*
-                react router removed query prop, using express for parsing 
-                (see: https://expressjs.com/en/api.html#req.query)
-                
-                    "As req.query’s shape is based on user-controlled input, 
-                    all properties and values in this object are untrusted 
-                    and should be validated ..."
-                
-                Use "express-validator" package in this instance, but limited 
-                in time for dev.
-            */
-           res.send(req.query.phone);
-        });
+        // get query, parse, fetch from api, load json
+        const phone = '111-111-1111';
         
         fetch('/api/user?phone=' + phone) // fetch phone thru api
         .then(res => res.json()) // make json
