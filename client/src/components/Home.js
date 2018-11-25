@@ -8,7 +8,7 @@ class Home extends Component {
     <div className="App">
       <h1>Home</h1>
       {/* Link to List.js */}
-      <Link to={'./List'}>
+      <Link to={'./list'}>
             List
       </Link>
     </div>

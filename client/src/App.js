@@ -10,6 +10,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/list' component={List}/>
+          <Route path={'match.path/phone'} component={User} />
         </Switch>
       </div>
     )
