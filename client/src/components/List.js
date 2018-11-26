@@ -36,7 +36,7 @@ class List extends Component {
             ))}
           </ul>
         </div>
-      );  
+      )  
     } else {
       return (<div>Loading...</div>);
     }

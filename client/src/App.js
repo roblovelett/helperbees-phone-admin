@@ -11,7 +11,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/list' component={List}/>
-          <Route path={'match.path/phone'} component={User} />
+          <Route path='/user' component={User}/>
         </Switch>
       </div>
     )
